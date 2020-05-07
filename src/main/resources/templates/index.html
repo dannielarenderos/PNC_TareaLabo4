@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Venta de producto</title>
+<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+</head>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+
+<body class="bg-dark">
+
+
+			<div class="form-group">
+
+				<h1 class="text-center">Ingresar Producto</h1>
+
+
+				<form class="divPrin" th:action="@{/formProducto}" th:object="${producto}" method="post">
+
+					<div class="divSec">
+						<label for="name">Nombre del producto</label> 
+						<br>
+						<input class="vergo" type="text" th:field="*{nombre}" id="name" /><br>
+						<span class="form-text text-danger" th:errors="*{nombre}"></span><br>
+					</div>
+						<br>
+
+					<div class="divSec">
+						<label for="desc">Descripción</label> 
+												<br>
+						
+						<input class="vergo" type="text" th:field="*{descripcion}" id="desc" /><br> 
+						<span class="form-text text-danger" th:errors="*{descripcion}"></span><br>
+					</div>
+						<br>
+
+					<div class="divSec">
+					
+						<label for="price">Precio</label> 
+												<br>
+						
+						<input class="vergo" type="number" th:field="*{precio}" id="price" /><br> 
+						<span class="form-text text-danger" th:errors="*{precio}"></span><br>
+					</div>
+
+					<div class="divSec">
+											<br>
+					
+						<label for="fecha">Fecha de vencimiento</label> 
+												<br>
+						
+						<input class="vergo" type="text" th:field="*{vencimiento}" id="fecha" /> 
+												<br>
+						
+						<span class="form-text text-danger" th:errors="*{vencimiento}" style="color: #FF0000;"></span>
+					</div>
+						<br>
+
+					<div class="divSect">
+						<input class="btn btn-primary" type="submit" value="Agregar producto" />
+					</div>
+
+				</form>
+			
+
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Seguridad</title>
+<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+
+</head>
+<body class="bg-dark">
+
+
+	
+	<div class="form-style-8" style="height: 80vh;">
+		
+				<h1 class="text-center">Seguridad</h1>
+
+				<form th:action="@{/seguridad}" th:object="${robot}" method="post">
+					<div class="form-group">
+						<h2 >Marcar si usted es un robot</h2>
+						
+						<input id="robo" type="radio" th:field="*{soyRobot}" th:value="${false}" />
+												<br>
+						
+						<span class="form-text text-danger" th:errors="*{soyRobot}"></span><br>
+					</div>
+					
+					<div class="form-group">
+											<br>
+					
+						<input class="btn btn-primary" type="submit" value="Aceptar"/>	
+						<br> 						<br>
+						
+						<a href="/producto">Regresar</a>
+
+					</div>
+
+				</form>
+			
+			</div>
+			
+
+</body>
+</html>
